@@ -1,0 +1,101 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+button:focus,
+input,
+input:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform-origin: 0 0;
+  transform: translateY(-50%);
+  transition: all 0.1s linear;
+}
+
+.input {
+  width: 100%;
+  font: normal 16px/16px "Montserrat", sans-serif;
+  padding: 20px 4px 8px 4px;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.input:focus + label,
+.input:not(:placeholder-shown) + label {
+  transform: translateY(-190%) scale(0.8);
+}
+
+.button {
+  font: normal 14px/14px "Montserrat", sans-serif;
+  padding: 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: 30px;
+  background-color: transparent;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    @media (min-width: 991px) {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  margin-top: 130px;
+  margin-bottom: 10px;
+  flex: 1 0 auto;
+}
