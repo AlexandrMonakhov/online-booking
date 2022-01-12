@@ -1,14 +1,14 @@
 <template>
   <div class="form-wrapper">
-    <h2 class="form__title">Название отеля</h2>
+    <h2 class="form__title">Забронируйте номер</h2>
     <form class="form">
-      <div class="input-group">
-        <input class="input" id="address" type="text" placeholder=" " />
-        <label class="label" for="address">Введите адрес</label>
-      </div>
       <div class="input-group">
         <input class="input" id="name" type="text" placeholder=" " />
         <label class="label" for="name">Введите имя</label>
+      </div>
+      <div class="input-group">
+        <input class="input" id="address" type="email" placeholder=" " />
+        <label class="label" for="address">Введите адрес</label>
       </div>
       <div class="input-group">
         <input class="input" id="phone" type="phone" placeholder=" " />

@@ -1,6 +1,8 @@
 <template>
   <header class="header">
-    <img class="header__logo" src="@/assets/logo.png" alt="" />
+    <router-link to="/">
+      <img class="header__logo" src="@/assets/logo.png" alt="Логотип" />
+    </router-link>
     <nav class="nav header-nav">
       <router-link to="/">Главная</router-link>
       <router-link to="/about">О проекте</router-link>
@@ -23,6 +25,7 @@ export default {};
   align-items: center;
   justify-content: space-between;
   padding: 5px 40px;
+  background-color: #fff;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   &__logo {
