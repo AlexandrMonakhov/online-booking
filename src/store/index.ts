@@ -1,33 +1,24 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { IStore } from "./interfaces";
+import hotels from "./modules/hotels.js";
+import hotel from "./modules/hotel.js";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    hotels: [],
+    isLoading: true,
   },
   mutations: {
-    updateData(state, data) {
-      state.hotels = data;
-    },
-  },
-  actions: {
-    async fetchData({ commit }) {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts?_limit=12"
-      );
-      const data = await response.json();
-      commit("updateData", data);
+    setLoading(state, bool) {
+      state.isLoading = bool;
     },
   },
   getters: {
-    allHotels(state) {
-      return state.hotels;
-    },
-    hotelsCount(state) {
-      return state.hotels.length;
-    },
+    loading: (state) => state.isLoading,
+  },
+  modules: {
+    hotels,
+    hotel,
   },
 });

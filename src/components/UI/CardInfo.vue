@@ -27,6 +27,13 @@ export default Vue.extend({
 .card-info {
   max-width: 50%;
 
+  @media (max-width: 1126px) {
+    max-width: 100%;
+    box-shadow: 0px 3px 10px rgb(0 0 0 / 10%);
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+  }
+
   &__title {
     margin-bottom: 30px;
     text-align: center;
@@ -40,6 +47,10 @@ export default Vue.extend({
 
   &__description {
     margin-top: 20px;
+    padding: 0 20px;
+    @media (max-width: 1126px) {
+      text-align: center;
+    }
   }
 }
 </style>

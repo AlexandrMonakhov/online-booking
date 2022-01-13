@@ -11,8 +11,8 @@
         {{ data.body }}
       </p>
     </div>
-    <router-link tag="button" class="button" :to="`/${data.id}`">
-      Подробнее
+    <router-link custom v-slot="{ navigate }" :to="`/${data.id}`">
+      <button class="button" @click="navigate">Подробнее</button>
     </router-link>
   </div>
 </template>

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/HomePage.vue";
 
 Vue.use(VueRouter);
 
@@ -13,12 +13,12 @@ const routes: Array<RouteConfig> = [
   {
     path: "/about",
     name: "About",
-    component: () => import("../views/About.vue"),
+    component: () => import("../views/AboutPage.vue"),
   },
   {
     path: "/:id",
     name: "HotelInfo",
-    component: () => import("../views/HotelInfo.vue"),
+    component: () => import("../views/HotelInfoPage.vue"),
   },
 ];
 
