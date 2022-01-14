@@ -7,15 +7,20 @@
       </div>
     </main>
     <Footer />
+
+    <Modal v-if="getSending && getVisible" />
   </div>
 </template>
 
 <script lang="ts">
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import Modal from "@/components/UI/Modal.vue";
 
 import Vue from "vue";
+import { mapGetters } from "vuex";
 export default Vue.extend({
-  components: { Header, Footer },
+  components: { Header, Footer, Modal },
+  computed: mapGetters(["getSending", "getVisible"]),
 });
 </script>
