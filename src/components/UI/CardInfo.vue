@@ -1,5 +1,5 @@
 <template>
-  <div class="card-info">
+  <div class="card-info" :class="{ full: getSending }">
     <h2 class="card-info__title">Отель: {{ data.title }}</h2>
     <img
       class="card-info__image"
@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapGetters } from "vuex";
 export default Vue.extend({
   name: "app-card-info",
   props: {
@@ -20,6 +21,7 @@ export default Vue.extend({
       required: true,
     },
   },
+  computed: mapGetters(["getSending"]),
 });
 </script>
 
@@ -52,5 +54,8 @@ export default Vue.extend({
       text-align: center;
     }
   }
+}
+.full {
+  max-width: 100%;
 }
 </style>

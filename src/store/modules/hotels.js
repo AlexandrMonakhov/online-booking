@@ -5,22 +5,16 @@ const hotels = {
   state: {
     hotels: [],
   },
-  getters: {
-    getAllHotels: (state) => state.hotels,
-    getHotelsCount: (state) => state.hotels.length,
-  },
   actions: {
     async fetchData({ commit }) {
       try {
-        commit("setLoading", true);
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/posts?_limit=12"
         );
         commit("setHotels", response.data);
+        commit('setLoading', false)
       } catch (e) {
         console.error(e);
-      } finally {
-        commit("setLoading", false);
       }
     },
   },
@@ -28,10 +22,11 @@ const hotels = {
     setHotels(state, data) {
       state.hotels = data;
     },
-    setLoading(state, bool) {
-      state.isLoading = bool;
-    },
   },
+  getters: {
+    getAllHotels: (state) => state.hotels,
+    getHotelsCount: (state) => state.hotels.length,
+  }
 };
 
 export default hotels;

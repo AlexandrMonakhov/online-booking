@@ -18,7 +18,10 @@ export default Vue.extend({
   name: "app-home",
   components: { Form, CardInfo, Loader },
   computed: mapGetters(["getHotel", "loading"]),
-  methods: mapActions(["fetchDataById"]),
+  methods: mapActions(["fetchDataById", "setLoading"]),
+  created() {
+    this.setLoading(true);
+  },
   mounted() {
     const id = this.$route.params.id;
     return this.fetchDataById(id);

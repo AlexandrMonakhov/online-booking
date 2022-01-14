@@ -1,7 +1,7 @@
 <template>
-  <div class="modal-wrapper" @click="$emit('close')">
+  <div class="modal-wrapper" @click="setVisible(false)">
     <div class="modal__content" @click.stop="">
-      <button class="modal__close" @click="$emit('close')">&#10005;</button>
+      <button class="modal__close" @click="setVisible(false)">&#10005;</button>
       <h2 class="modal__title">
         Заявка обработана! Поздравляем с приобретением
       </h2>
@@ -11,9 +11,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { mapActions } from "vuex";
 
 export default Vue.extend({
   name: "app-modal",
+  methods: mapActions(["setVisible"]),
 });
 </script>
 

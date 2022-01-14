@@ -5,21 +5,16 @@ const hotel = {
   state: {
     hotel: {},
   },
-  getters: {
-    getHotel: (state) => state.hotel,
-  },
   actions: {
     async fetchDataById({ commit }, id) {
       try {
-        commit("setLoading", true);
         const response = await axios.get(
           `https://jsonplaceholder.typicode.com/posts/${id}`
         );
         commit("setHotelById", response.data);
+        commit('setLoading', false)
       } catch (e) {
         console.error(e);
-      } finally {
-        commit("setLoading", false);
       }
     },
   },
@@ -27,6 +22,9 @@ const hotel = {
     setHotelById(state, data) {
       state.hotel = data;
     },
+  },
+  getters: {
+    getHotel: (state) => state.hotel,
   }
 }
 
