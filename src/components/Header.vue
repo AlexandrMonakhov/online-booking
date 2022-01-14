@@ -25,7 +25,8 @@ export default {};
   align-items: center;
   justify-content: space-between;
   padding: 5px 40px;
-  background-color: #fff;
+  color: #fff;
+  background-color: #1e2023;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
   &__logo {

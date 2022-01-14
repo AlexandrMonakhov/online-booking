@@ -4,6 +4,7 @@ import hotels from "./modules/hotels.js";
 import hotel from "./modules/hotel.js";
 import modal from "./modules/modal.js";
 import form from "./modules/form.js";
+import notification from "./modules/notification.js";
 
 Vue.use(Vuex);
 
@@ -11,14 +12,14 @@ export default new Vuex.Store({
   state: {
     isLoading: true,
   },
-  actions: {
-    setLoading({ commit }, bool) {
-      commit("setLoading", bool);
-    },
-  },
   mutations: {
     setLoading(state, bool) {
       state.isLoading = bool;
+    },
+  },
+  actions: {
+    setLoading({ commit }, bool) {
+      commit("setLoading", bool);
     },
   },
   getters: {
@@ -29,5 +30,6 @@ export default new Vuex.Store({
     hotel,
     modal,
     form,
+    notification,
   },
 });

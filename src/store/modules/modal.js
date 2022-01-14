@@ -4,14 +4,14 @@ const modal = {
   state: {
     isVisible: false
   },
-  actions: {
-    setVisible({ commit }, bool) {
-      commit('setVisible', bool);
-    }
-  },
   mutations: {
     setVisible(state, bool) {
       state.isVisible = bool;
+    }
+  },
+  actions: {
+    setVisible({ commit }, bool) {
+      commit('setVisible', bool);
     }
   },
   getters: {

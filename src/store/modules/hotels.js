@@ -5,6 +5,11 @@ const hotels = {
   state: {
     hotels: [],
   },
+  mutations: {
+    setHotels(state, data) {
+      state.hotels = data;
+    },
+  },
   actions: {
     async fetchData({ commit }) {
       try {
@@ -16,11 +21,6 @@ const hotels = {
       } catch (e) {
         console.error(e);
       }
-    },
-  },
-  mutations: {
-    setHotels(state, data) {
-      state.hotels = data;
     },
   },
   getters: {

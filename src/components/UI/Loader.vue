@@ -1,47 +1,153 @@
 <template>
-  <div class="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <ul id="loader">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 </template>
 
 <style scoped>
-.lds-ring {
-  display: block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
+#loader li {
+  list-style: none;
   position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border: 8px solid #cef;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #cef transparent transparent transparent;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  background-color: #d5397b;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) inset;
 }
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+#loader li:nth-child(9n + 1) {
+  margin-left: -75px;
+  transform: scale(0.5);
+  animation: nineone 2s infinite;
 }
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+#loader li:nth-child(9n + 2) {
+  margin-top: -75px;
+  animation: ninethree 2s infinite;
+  transform: scale(0.5);
 }
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+#loader li:nth-child(9n + 3) {
+  margin-top: 25px;
+  animation: nineseven 2s infinite;
+  transform: scale(0.5);
 }
-@keyframes lds-ring {
+#loader li:nth-child(9n + 4) {
+  margin-left: 25px;
+  animation: ninefive 2s infinite;
+  transform: scale(0.5);
+}
+#loader li:nth-child(9n + 5) {
+  margin-left: 25px;
+  margin-top: 25px;
+  animation: ninesix 2s infinite;
+}
+#loader li:nth-child(9n + 6) {
+  margin-left: -75px;
+  margin-top: 25px;
+  transform: scale(1);
+  animation: nineeight 2s infinite;
+}
+#loader li:nth-child(9n + 7) {
+  margin-left: -75px;
+  margin-top: -75px;
+  transform: scale(1);
+  animation: ninetwo 2s infinite;
+}
+#loader li:nth-child(9n + 8) {
+  margin-left: 25px;
+  margin-top: -75px;
+  transform: scale(1);
+  animation: ninefour 2s infinite;
+}
+
+@keyframes nineone {
   0% {
-    transform: rotate(0deg);
+    margin-top: -25px;
+    transform: scale(0.5);
   }
   100% {
-    transform: rotate(360deg);
+    margin-top: -75px;
+    transform: scale(1);
+  }
+}
+
+@keyframes ninetwo {
+  0% {
+    margin-left: -75px;
+  }
+  100% {
+    margin-left: -25px;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes ninethree {
+  0% {
+    margin-left: -25px;
+  }
+  100% {
+    margin-left: 25px;
+    transform: scale(1);
+  }
+}
+
+@keyframes ninefour {
+  0% {
+    margin-top: -75px;
+  }
+  100% {
+    margin-top: -25px;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes ninefive {
+  0% {
+    margin-top: -25px;
+  }
+  100% {
+    margin-top: 25px;
+    transform: scale(1);
+  }
+}
+
+@keyframes ninesix {
+  0% {
+    margin-left: 25px;
+  }
+  100% {
+    margin-left: -25px;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes nineseven {
+  0% {
+    margin-left: -25px;
+  }
+  100% {
+    margin-left: -75px;
+    transform: scale(1);
+  }
+}
+
+@keyframes nineeight {
+  0% {
+    margin-top: 25px;
+  }
+  100% {
+    margin-top: -25px;
+    transform: scale(0.5);
   }
 }
 </style>

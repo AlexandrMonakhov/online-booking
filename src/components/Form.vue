@@ -60,9 +60,7 @@
           Поле телефон должно содержать минимум 11 символов, максимум 12
         </small>
       </div>
-      <button class="button" ref="button">
-        {{ getSending ? "Идет отправка..." : "Остановиться здесь" }}
-      </button>
+      <button class="button" ref="button">Остановиться здесь</button>
     </form>
   </div>
 </template>
@@ -92,14 +90,17 @@ export default Vue.extend({
     email: { email, required },
     phone: { required, minLength: minLength(11), maxLength: maxLength(12) },
   },
-  computed: mapGetters(["getSending"]),
+  computed: mapGetters(["getSending", "getShown"]),
   methods: {
-    ...mapActions(["setSending", "setVisible"]),
+    ...mapActions(["setSending", "setVisible", "setShown", "setLoad"]),
     submitForm() {
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
       }
+
+      this.setLoad(true);
+      this.setShown(true);
 
       const btnSubmit = this.$refs.button;
 
@@ -107,6 +108,9 @@ export default Vue.extend({
 
       setTimeout(() => {
         this.setSending(true);
+        this.setLoad(false);
+        this.setShown(false);
+
         this.name = this.email = this.phone = "";
         btnSubmit.disabled = false;
       }, 1500);

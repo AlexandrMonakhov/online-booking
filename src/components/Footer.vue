@@ -11,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  background-color: #1e2023;
 }
 </style>
