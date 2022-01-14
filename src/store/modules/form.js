@@ -15,7 +15,7 @@ const form = {
     }
   },
   getters: {
-    getSending: (state) => state.isSending
+    getSending: (state) => state.isSending,
   }
 };
 
