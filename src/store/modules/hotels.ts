@@ -1,12 +1,12 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import axios from "axios";
+import { IHotelsState } from "../interfaces";
 
 const hotels = {
   state: {
     hotels: [],
-  },
+  } as IHotelsState,
   mutations: {
-    setHotels(state, data) {
+    setHotels(state: IHotelsState, data: Array<object>) {
       state.hotels = data;
     },
   },
@@ -16,17 +16,17 @@ const hotels = {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/posts?_limit=12"
         );
-        commit("setHotels", response.data);
-        commit('setLoading', false)
+        commit("setHotels", response.data as Array<object>);
+        commit("setLoading", false);
       } catch (e) {
         console.error(e);
       }
     },
   },
   getters: {
-    getAllHotels: (state) => state.hotels,
-    getHotelsCount: (state) => state.hotels.length,
-  }
+    getAllHotels: (state: IHotelsState) => state.hotels,
+    getHotelsCount: (state: IHotelsState) => state.hotels.length,
+  },
 };
 
 export default hotels;
